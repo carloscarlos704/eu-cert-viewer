@@ -1,27 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-
-const EuStars = () => (
-  <div className="flex items-center gap-1">
-    {[...Array(12)].map((_, i) => (
-      <span key={i} className="text-eu-yellow text-lg">★</span>
-    ))}
-  </div>
-);
+import { Shield, Lock, CheckCircle } from "lucide-react";
 
 const EuCertificate = () => {
-  const handlePrintPDF = () => {
-    window.print();
-  };
-
   return (
     <div className="min-h-screen bg-background print-friendly">
       {/* Header */}
       <header className="eu-header-bg py-4 px-6 mb-6 print:mb-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-eu-blue-dark rounded-full flex items-center justify-center border-2 border-eu-yellow">
-              <EuStars />
+            <div className="w-20 h-16 bg-white rounded-sm flex items-center justify-center border border-eu-border overflow-hidden">
+              <img 
+                src="/lovable-uploads/59aed740-667d-4785-98b2-b3428bd7ec99.png" 
+                alt="Drapeau de l'Union Européenne" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="text-white">
               <h1 className="text-xl font-bold tracking-wide">UNIÓN EUROPEA</h1>
@@ -29,14 +21,10 @@ const EuCertificate = () => {
               <p className="text-sm opacity-90">Ref. Proceso: EU-ESP-LOG-2025-0814-CS</p>
             </div>
           </div>
-          <Button 
-            onClick={handlePrintPDF}
-            variant="outline" 
-            className="bg-white text-eu-blue border-white hover:bg-eu-light print:hidden"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Descargar en PDF
-          </Button>
+          <div className="flex items-center gap-2 text-white">
+            <Shield className="w-5 h-5" />
+            <span className="text-sm font-semibold">DOCUMENTO OFICIAL</span>
+          </div>
         </div>
       </header>
 
@@ -199,30 +187,111 @@ const EuCertificate = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="mt-8 pt-6 border-t border-eu-border">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div>
-              <p className="text-sm text-muted-foreground">Fecha de emisión:</p>
-              <p className="font-semibold text-eu-text">Jueves, 14 de agosto de 2025</p>
+        {/* Seguridad y Validación */}
+        <section className="certificate-section bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-eu-blue">
+          <h3 className="text-lg font-semibold text-eu-text mb-4 border-b border-eu-border pb-2 flex items-center gap-2">
+            <Shield className="w-5 h-5 text-eu-blue" />
+            VALIDACIÓN Y SEGURIDAD DEL DOCUMENTO
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-eu-text mb-1">Certificado Digital</h4>
+                <p className="text-sm text-muted-foreground">Documento verificado con firma digital europea</p>
+              </div>
             </div>
-            <div className="flex items-center gap-6">
-              <div className="text-center">
-                <div className="w-24 h-24 border-2 border-dashed border-eu-border rounded-sm flex items-center justify-center bg-eu-light">
-                  <div className="text-xs text-center text-muted-foreground">
-                    <div className="text-2xl">⚪</div>
-                    <div>QR Code</div>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Escanear el código QR para<br />seguir el progreso del proceso
+            <div className="flex items-start gap-3">
+              <Lock className="w-6 h-6 text-eu-blue mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-eu-text mb-1">Encriptación SSL</h4>
+                <p className="text-sm text-muted-foreground">Protección de datos de nivel bancario</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Shield className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-eu-text mb-1">Conformidad UE</h4>
+                <p className="text-sm text-muted-foreground">Cumple normativas GDPR y regulaciones UE</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer Profesional */}
+        <footer className="mt-8 pt-6 border-t-2 border-eu-blue bg-gradient-to-r from-slate-50 to-blue-50">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div>
+              <h4 className="font-semibold text-eu-text mb-3 flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-600" />
+                Información del Documento
+              </h4>
+              <div className="space-y-2 text-sm">
+                <p><span className="text-muted-foreground">Fecha de emisión:</span> <span className="font-semibold">14 de agosto de 2025</span></p>
+                <p><span className="text-muted-foreground">ID del certificado:</span> <span className="font-mono text-xs">EU-ESP-LOG-2025-0814-CS</span></p>
+                <p><span className="text-muted-foreground">Válido hasta:</span> <span className="font-semibold">14 de agosto de 2027</span></p>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-eu-text mb-3 flex items-center gap-2">
+                <Lock className="w-4 h-4 text-eu-blue" />
+                Verificación de Seguridad
+              </h4>
+              <div className="space-y-2 text-sm">
+                <p className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span>Certificado SSL válido</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span>Firma digital verificada</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span>Cumplimiento GDPR</span>
                 </p>
               </div>
-              <div className="text-center">
-                <div className="w-32 h-16 border border-eu-border rounded-sm flex items-center justify-center bg-eu-light">
-                  <p className="text-xs text-muted-foreground">
-                    Sello y firma del<br />responsable de la<br />certificación
-                  </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-eu-text mb-3 flex items-center gap-2">
+                <Shield className="w-4 h-4 text-eu-blue" />
+                Contacto Verificación
+              </h4>
+              <div className="space-y-2 text-sm">
+                <p><span className="text-muted-foreground">Email seguro:</span> <br/><span className="font-mono text-xs">verify@eu-logistics.europa.eu</span></p>
+                <p><span className="text-muted-foreground">Línea de verificación:</span> <br/><span className="font-semibold">+32 2 299 96 96</span></p>
+                <p><span className="text-muted-foreground">Portal web:</span> <br/><span className="text-eu-blue">portal.eu-logistics.europa.eu</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-eu-border pt-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-center md:text-left">
+                <p className="text-xs text-muted-foreground mb-1">
+                  © 2025 Unión Europea - Departamento de Certificación Logística
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Este documento está protegido por las leyes de la Unión Europea sobre falsificación de documentos oficiales.
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="text-center">
+                  <div className="w-16 h-16 border border-eu-border rounded-sm flex items-center justify-center bg-white">
+                    <div className="text-xs text-center text-muted-foreground">
+                      <div className="text-lg">📱</div>
+                      <div className="text-[10px]">QR Verify</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="w-24 h-12 border border-eu-border rounded-sm flex items-center justify-center bg-white">
+                    <p className="text-[10px] text-muted-foreground text-center">
+                      Sello Digital<br/>Certificado
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

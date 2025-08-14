@@ -9,34 +9,42 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* EU Official Colors */
+    --eu-blue: 220 100% 30%;
+    --eu-blue-dark: 220 100% 20%;
+    --eu-yellow: 48 100% 50%;
+    --eu-text: 220 20% 20%;
+    --eu-light: 210 20% 98%;
+    --eu-border: 220 20% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 220 100% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 20% 20%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 210 20% 96%;
+    --accent-foreground: 220 20% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 220 100% 30%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +109,40 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Roboto', 'Arial', sans-serif;
+  }
+}
+
+@layer utilities {
+  .eu-header-bg {
+    background: linear-gradient(90deg, hsl(var(--eu-blue-dark)) 0%, hsl(var(--eu-blue)) 100%);
+  }
+  
+  .eu-star {
+    color: hsl(var(--eu-yellow));
+  }
+  
+  .print-friendly {
+    @media print {
+      -webkit-print-color-adjust: exact;
+      color-adjust: exact;
+      break-inside: avoid;
+    }
+  }
+  
+  .certificate-section {
+    @apply bg-card border border-eu-border rounded-sm p-6 mb-4;
+  }
+  
+  .certificate-table {
+    @apply w-full border-collapse border border-eu-border;
+  }
+  
+  .certificate-table th {
+    @apply bg-eu-light border border-eu-border px-3 py-2 text-left font-semibold text-eu-text;
+  }
+  
+  .certificate-table td {
+    @apply border border-eu-border px-3 py-2 text-eu-text;
   }
 }

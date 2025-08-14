@@ -34,22 +34,36 @@ const EuCertificate = () => {
           <h3 className="text-lg font-semibold text-eu-text mb-4 border-b border-eu-border pb-2">
             DATOS DEL CLIENTE
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm text-muted-foreground">Nombre completo:</p>
-              <p className="font-semibold text-eu-text">Carlos Javier Molina Sanz</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-sm text-muted-foreground">Nombre completo:</p>
+                  <p className="font-semibold text-eu-text">Carlos Javier Molina Sanz</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">DNI:</p>
+                  <p className="font-semibold text-eu-text">25135417M</p>
+                </div>
+                <div className="md:col-span-2">
+                  <p className="text-sm text-muted-foreground">Dirección:</p>
+                  <p className="font-semibold text-eu-text">Calle Val Alta, nº 15, Casa 2, 50800 Zuera, Zaragoza, España</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Correo electrónico:</p>
+                  <p className="font-semibold text-eu-text">carlosmolinasanz@hotmail.com</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-sm text-muted-foreground">DNI:</p>
-              <p className="font-semibold text-eu-text">25135417M</p>
-            </div>
-            <div className="md:col-span-2">
-              <p className="text-sm text-muted-foreground">Dirección:</p>
-              <p className="font-semibold text-eu-text">Calle Val Alta, nº 15, Casa 2, 50800 Zuera, Zaragoza, España</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Correo electrónico:</p>
-              <p className="font-semibold text-eu-text">carlosmolinasanz@hotmail.com</p>
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-white p-4 border-2 border-eu-border rounded-sm shadow-md">
+                <p className="text-xs text-muted-foreground mb-2 text-center font-semibold">DOCUMENTO DE IDENTIDAD</p>
+                <img 
+                  src="/lovable-uploads/c5be33e0-df5c-4de0-9143-ad49cecedd9e.png" 
+                  alt="DNI de Carlos Javier Molina Sanz" 
+                  className="max-w-[280px] w-full h-auto rounded border border-gray-200"
+                />
+              </div>
             </div>
           </div>
         </section>

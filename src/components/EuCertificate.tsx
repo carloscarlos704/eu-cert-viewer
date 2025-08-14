@@ -101,46 +101,52 @@ const EuCertificate = () => {
           <h3 className="text-lg font-semibold text-eu-text mb-4 border-b border-eu-border pb-2">
             SERVICIOS CERTIFICADOS INCLUIDOS – PAQUETE SEGURIDAD EXPRESS
           </h3>
-          <table className="certificate-table">
-            <thead>
-              <tr>
-                <th>Código</th>
-                <th>Descripción</th>
-                <th>Validez</th>
-                <th className="text-right">Valor (€)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="font-mono">EU-290-TUV</td>
-                <td>Inspección técnica oficial TÜV</td>
-                <td>24 meses</td>
-                <td className="text-right">1.500,00</td>
-              </tr>
-              <tr>
-                <td className="font-mono">EU-416-ADMINT</td>
-                <td>Trámite y verificación administrativa interna</td>
-                <td>—</td>
-                <td className="text-right">1.050,00</td>
-              </tr>
-              <tr>
-                <td className="font-mono">EU-723-GAR12M</td>
-                <td>Garantía técnica europea</td>
-                <td>12 meses</td>
-                <td className="text-right">1.350,00</td>
-              </tr>
-              <tr>
-                <td className="font-mono">EU-850-LOGSUP</td>
-                <td>Supervisión logística y coordinación interna</td>
-                <td>—</td>
-                <td className="text-right">1.932,50</td>
-              </tr>
-              <tr className="bg-eu-light">
-                <td colSpan={3} className="font-bold text-right">Total certificado (con IVA):</td>
-                <td className="text-right font-bold text-lg">5.832,50 €</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white">
+              <thead>
+                <tr className="bg-gradient-to-r from-eu-blue to-eu-blue-dark text-white">
+                  <th className="border border-eu-border px-4 py-3 text-left font-semibold">Código</th>
+                  <th className="border border-eu-border px-4 py-3 text-left font-semibold">Descripción</th>
+                  <th className="border border-eu-border px-4 py-3 text-center font-semibold">Validez</th>
+                  <th className="border border-eu-border px-4 py-3 text-right font-semibold">Valor (€)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="hover:bg-eu-light transition-colors">
+                  <td className="border border-eu-border px-4 py-3 font-mono text-sm bg-slate-50">EU-290-TUV</td>
+                  <td className="border border-eu-border px-4 py-3">Inspección técnica oficial TÜV</td>
+                  <td className="border border-eu-border px-4 py-3 text-center">24 meses</td>
+                  <td className="border border-eu-border px-4 py-3 text-right font-semibold">1.500,00</td>
+                </tr>
+                <tr className="hover:bg-eu-light transition-colors">
+                  <td className="border border-eu-border px-4 py-3 font-mono text-sm bg-slate-50">EU-416-ADMINT</td>
+                  <td className="border border-eu-border px-4 py-3">Trámite y verificación administrativa interna</td>
+                  <td className="border border-eu-border px-4 py-3 text-center">—</td>
+                  <td className="border border-eu-border px-4 py-3 text-right font-semibold">1.050,00</td>
+                </tr>
+                <tr className="hover:bg-eu-light transition-colors">
+                  <td className="border border-eu-border px-4 py-3 font-mono text-sm bg-slate-50">EU-723-GAR12M</td>
+                  <td className="border border-eu-border px-4 py-3">Garantía técnica europea</td>
+                  <td className="border border-eu-border px-4 py-3 text-center">12 meses</td>
+                  <td className="border border-eu-border px-4 py-3 text-right font-semibold">1.350,00</td>
+                </tr>
+                <tr className="hover:bg-eu-light transition-colors">
+                  <td className="border border-eu-border px-4 py-3 font-mono text-sm bg-slate-50">EU-850-LOGSUP</td>
+                  <td className="border border-eu-border px-4 py-3">Supervisión logística y coordinación interna</td>
+                  <td className="border border-eu-border px-4 py-3 text-center">—</td>
+                  <td className="border border-eu-border px-4 py-3 text-right font-semibold">1.932,50</td>
+                </tr>
+                <tr className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300">
+                  <td colSpan={3} className="border border-eu-border px-4 py-4 font-bold text-right text-lg bg-transparent">
+                    Total certificado (con IVA):
+                  </td>
+                  <td className="border border-eu-border px-4 py-4 text-right font-bold text-xl text-green-700 bg-transparent">
+                    5.832,50 €
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         {/* Conformidad */}
@@ -220,7 +226,7 @@ const EuCertificate = () => {
 
         {/* Footer Profesional */}
         <footer className="mt-8 pt-6 border-t-2 border-eu-blue bg-gradient-to-r from-slate-50 to-blue-50">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             <div>
               <h4 className="font-semibold text-eu-text mb-3 flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-600" />
@@ -251,18 +257,6 @@ const EuCertificate = () => {
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                   <span>Cumplimiento GDPR</span>
                 </p>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-eu-text mb-3 flex items-center gap-2">
-                <Shield className="w-4 h-4 text-eu-blue" />
-                Contacto Verificación
-              </h4>
-              <div className="space-y-2 text-sm">
-                <p><span className="text-muted-foreground">Email seguro:</span> <br/><span className="font-mono text-xs">verify@eu-logistics.europa.eu</span></p>
-                <p><span className="text-muted-foreground">Línea de verificación:</span> <br/><span className="font-semibold">+32 2 299 96 96</span></p>
-                <p><span className="text-muted-foreground">Portal web:</span> <br/><span className="text-eu-blue">portal.eu-logistics.europa.eu</span></p>
               </div>
             </div>
           </div>

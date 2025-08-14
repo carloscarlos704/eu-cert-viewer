@@ -186,7 +186,7 @@ const EuCertificate = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Correo electrónico:</p>
-                  <p className="font-semibold text-eu-text">contact@autoph.com</p>
+                  <p className="font-semibold text-eu-text">contact@autopbh.com</p>
                 </div>
               </div>
             </div>
